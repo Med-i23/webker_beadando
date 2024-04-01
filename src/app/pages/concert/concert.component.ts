@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import kep1 from '../assets/image-4.jpg';
 
 @Component({
   selector: 'app-concert',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './concert.component.scss'
 })
 export class ConcertComponent {
-
+    kep1 = kep1;
 }

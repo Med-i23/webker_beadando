@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:webker_beadando": "node dist/webker_beadando/server/server.mjs"
+    "serve:ssr:webker-beadando": "node dist/webker-beadando/server/server.mjs"
   },
   "private": true,
   "dependencies": {

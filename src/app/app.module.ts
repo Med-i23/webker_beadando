@@ -13,6 +13,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import {AngularFireModule} from "@angular/fire/compat";
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    AngularFireModule.initializeApp({"projectId":"webker-2024","appId":"1:609794910909:web:6be197f2d62d80f3a265d4","storageBucket":"webker-2024.appspot.com","apiKey":"AIzaSyCj3Gog_2qyXxBSp2eb_lksu3C6uH3LPSI","authDomain":"webker-2024.firebaseapp.com","messagingSenderId":"609794910909","measurementId":"G-FC2QR4C1HT"}),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

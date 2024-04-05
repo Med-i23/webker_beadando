@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "webker_beadando": {
+    "webker-beadando": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/webker_beadando",
+            "outputPath": "dist/webker-beadando",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "webker_beadando:build:production"
+              "buildTarget": "webker-beadando:build:production"
             },
             "development": {
-              "buildTarget": "webker_beadando:build:development"
+              "buildTarget": "webker-beadando:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "webker_beadando:build"
+            "buildTarget": "webker-beadando:build"
           }
         },
         "test": {
@@ -108,6 +108,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "webker-beadando:build:production",
+              "serveTarget": "webker-beadando:serve:production"
+            },
+            "development": {
+              "buildTarget": "webker-beadando:build:development",
+              "serveTarget": "webker-beadando:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

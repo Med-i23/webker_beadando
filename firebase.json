@@ -1,1 +1,11 @@
-{}
+{
+  "hosting": [
+    {
+      "target": "webker-beadando",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "europe-west1"
+      }
+    }
+  ]
+}

@@ -1,7 +1,15 @@
 {
   "projects": {
-    "default": "webker-beadando"
+    "default": "webker-2024"
   },
-  "targets": {},
+  "targets": {
+    "webker-2024": {
+      "hosting": {
+        "webker-beadando": [
+          "webker-2024"
+        ]
+      }
+    }
+  },
   "etags": {}
 }

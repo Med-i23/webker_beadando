@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { AuthService } from '../../shared/services/auth.service';
 import { FakeLoadingService } from '../../shared/services/fake-loading.service';
-import {AuthService} from "../../shared/services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,8 @@ import {AuthService} from "../../shared/services/auth.service";
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  email = new FormControl<string>('');
-  password = new FormControl<string>('');
+  email = new FormControl('');
+  password = new FormControl('');
 
   loadingSubscription?: Subscription;
   loadingObservation?: Observable<boolean>;
@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   async login() {
     this.loading = true;
+
     this.authService.login(this.email.value as string, this.password.value as string).then(cred => {
       console.log(cred);
       this.router.navigateByUrl('/main');
@@ -40,5 +41,4 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.loadingSubscription?.unsubscribe();
   }
-
 }

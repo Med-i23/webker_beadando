@@ -1,6 +1,6 @@
-<div class="concert-card" *ngFor="let concert of concerts">
+<div class="concert-card" *ngFor="let concert of concerts$ | async">
   <mat-card>
-    <img mat-card-image [src]="concert.image" alt="{{ concert.alt }}">
+     <img mat-card-image [src]="loadImage(concert.image) | async" alt="{{ concert.alt }}">
     <mat-card-content>
       <h3>{{ concert.title }}</h3>
       <p>Dátum: {{ concert.date }}</p>

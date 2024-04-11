@@ -12,11 +12,11 @@
       <div><a routerLink="/main">TicketWizard</a></div>
       <div class="navigation-wrapper">
         <ul class="navigation-items">
-          <li *ngIf="!(loggedInUser)"><a routerLink="/login">Login</a></li>
-          <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logout">Logout</a></li>
-          <li><a routerLink="/signup">Register</a></li>
-          <li><a routerLink="/concert">Concert</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
+          <li *ngIf="!(loggedInUser)"><a routerLink="/login">Bejelentkezés</a></li>
+          <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()">Kijelentkezés</a></li>
+          <li><a routerLink="/signup">Regisztráció</a></li>
+          <li><a routerLink="/concert">Koncertek</a></li>
+          <li><a routerLink="/contact">Kapcsolat</a></li>
         </ul>
       </div>
     </mat-toolbar>

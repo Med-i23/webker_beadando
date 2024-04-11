@@ -1,10 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {AuthService} from "../../shared/services/auth.service";
-import {User} from "../../shared/models/user";
-import {UserService} from "../../shared/services/user.service";
-
+import { AuthService } from '../../shared/services/auth.service';
+import { User } from '../../shared/models/User';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-signup',

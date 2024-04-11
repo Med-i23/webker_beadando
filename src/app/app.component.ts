@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   page = '';
   routes: Array<string> = [];
   loggedInUser?: firebase.default.User | null;
+
 
   constructor(private router: Router, private authService: AuthService) {
 

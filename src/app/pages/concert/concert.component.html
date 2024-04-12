@@ -1,6 +1,25 @@
-<div class="concert-card" *ngFor="let concert of concerts$ | async">
+<div class="concert-card" *ngFor="let item of combinedData$ | async">
   <mat-card>
-     <img mat-card-image [src]="loadImage(concert.image) | async" alt="{{ concert.alt }}">
+    <img mat-card-image [src]="item.image ? item.image : item.src" alt="{{ item.alt }}">
+    <mat-card-content>
+      <h3>{{ item.title }}</h3>
+      <p>Dátum: {{ item.date }}</p>
+      <p>Helyszín: {{ item.location }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Jegyvásárlás</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+
+
+<!--
+<div class="concert-card" *ngFor="let concert of concerts">
+  <mat-card>
+    <img mat-card-image [src]="concert.image" alt="{{ concert.alt }}">
     <mat-card-content>
       <h3>{{ concert.title }}</h3>
       <p>Dátum: {{ concert.date }}</p>
@@ -11,3 +30,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
+       -->

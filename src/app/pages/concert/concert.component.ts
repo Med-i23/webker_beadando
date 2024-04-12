@@ -10,14 +10,14 @@ import { Image } from '../../shared/models/Image';
   styleUrls: ['./concert.component.scss']
 })
 export class ConcertComponent implements OnInit {
-  analog: string = 'src/assets/analog_balaton.jpg';
-  krubi: string = 'src/assets/krubi.jpg';
-  carson: string = 'src/assets/carson_coma.jpg';
-  harminc_y: string = 'src/assets/30y.jpg';
+  analog: string = '/assets/analog_balaton.jpg';
+  krubi: string = '/assets/krubi.jpg';
+  carson: string = '/assets/carson_coma.jpg';
+  harminc_y: string = '/assets/30y.jpg';
 
   localImages = [
-    { src: this.analog, alt: 'Analog Balaton' },
     { src: this.krubi, alt: 'Krubi' },
+    { src: this.analog, alt: 'Analog Balaton' },
     { src: this.carson, alt: 'Carson Coma' },
     { src: this.harminc_y, alt: 'Harminc Y' }
   ];

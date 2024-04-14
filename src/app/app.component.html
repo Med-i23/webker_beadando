@@ -14,12 +14,14 @@
         <ul class="navigation-items">
           <li *ngIf="!(loggedInUser)"><a routerLink="/login">Bejelentkezés</a></li>
           <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logout()">Kijelentkezés</a></li>
-          <li><a routerLink="/signup">Regisztráció</a></li>
+          <li *ngIf="!(loggedInUser)"><a routerLink="/signup">Regisztráció</a></li>
           <li><a routerLink="/concert">Koncertek</a></li>
           <li><a routerLink="/contact">Kapcsolat</a></li>
         </ul>
       </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
+<app-footer></app-footer>

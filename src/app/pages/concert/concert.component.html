@@ -4,7 +4,7 @@
     <tr>
       <td>
         <div class="concert-card" *ngFor="let item of concerts$ | async">
-          <mat-card>
+        <mat-card>
             <img mat-card-image [src]="item.image ? item.image : item.src" alt="{{ item.alt }}">
             <mat-card-content>
               <h3>{{ item.title }}</h3>
@@ -17,11 +17,13 @@
           </mat-card>
         </div>
       </td>
+
       <td class="local-images">
         <div class="local-image" *ngFor="let image of localImages">
-          <img [src]="image.src" [alt]="image.alt">
+       <img [src]="image.src" [alt]="image.alt">
         </div>
       </td>
+
     </tr>
   </table>
 </div>

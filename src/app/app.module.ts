@@ -20,13 +20,15 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import {AngularFireModule} from "@angular/fire/compat";
 import {DateFormatPipe} from "./shared/pipes/date-format.pipe";
 import { FooterComponent } from './shared/footer/footer.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     DateFormatPipe,
-    FooterComponent
+    FooterComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

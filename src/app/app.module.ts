@@ -19,7 +19,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import {AngularFireModule} from "@angular/fire/compat";
 import {DateFormatPipe} from "./shared/pipes/date-format.pipe";
-import { FooterComponent } from './shared/footer/footer/footer.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [

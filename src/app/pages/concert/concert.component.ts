@@ -3,6 +3,7 @@ import { ConcertService } from '../../shared/services/concert.service';
 import { Observable, combineLatest, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Image } from '../../shared/models/Image';
+import {PaymentService} from "../../shared/services/payment.service";
 
 @Component({
   selector: 'app-concert',
@@ -25,7 +26,7 @@ export class ConcertComponent implements OnInit {
   concerts$!: Observable<any[]>;
   combinedData$!: Observable<any[]>;
 
-  constructor(private concertService: ConcertService) {}
+  constructor(private concertService: ConcertService, private paymentService: PaymentService) {}
 
   ngOnInit(): void {
     this.concerts$ = this.concertService.getConcerts();
@@ -40,4 +41,12 @@ export class ConcertComponent implements OnInit {
       })
     );
   }
+
+
+  openPaymentDialog(): void {
+    this.paymentService.openPaymentDialog();
+  }
+
+
+
 }

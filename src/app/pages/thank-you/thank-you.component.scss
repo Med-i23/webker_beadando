@@ -1,0 +1,27 @@
+.thank-you-card {
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.thank-you-card-content {
+  margin-bottom: 20px;
+}
+
+.thank-you-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.thank-you-button {
+  margin-left: 10px;
+}

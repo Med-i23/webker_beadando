@@ -1,9 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-
-$bgcolor: azure;
-
 html {
-  background-color: $bgcolor;
+  background-color: azure;
 }
 
 html,
@@ -15,6 +11,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: white;
 }
 
 .loading-indicator {

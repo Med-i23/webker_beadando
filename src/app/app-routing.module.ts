@@ -7,10 +7,12 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'concert',
     loadChildren: () => import('./pages/concert/concert.module').then(m => m.ConcertModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'contact',
@@ -22,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/main',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },

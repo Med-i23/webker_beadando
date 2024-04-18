@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCard, MatCardActions, MatCardContent, MatCardImage} from "@angular/material/card";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatButtonModule} from "@angular/material/button";
 import { PaymentComponent} from './payment.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatIconModule} from "@angular/material/icon";
+import { MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PaymentComponent
+  ],
   imports: [
     CommonModule,
     MatCardContent,
@@ -20,9 +23,11 @@ import {MatIconModule} from "@angular/material/icon";
     MatButton,
     MatCardImage,
     ReactiveFormsModule,
-    MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule
   ]
 })
 export class PaymentModule { }

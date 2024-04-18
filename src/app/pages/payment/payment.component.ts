@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PaymentService} from "../../shared/services/payment.service";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {ThankYouComponent} from "../thank-you/thank-you.component";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-
+import {FormBuilder, FormGroup, FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-payment',
@@ -11,20 +10,21 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrl: './payment.component.scss'
 })
 export class PaymentComponent implements OnInit{
-  paymentForm!: FormGroup;
+  paymentForm = new FormGroup({
+    cardNumber: new FormControl(''),
+    expirationDate: new FormControl(''),
+    cvv: new FormControl(''),
+    nameOnCard: new FormControl(''),
+    address: new FormControl(''),
+    city: new FormControl(''),
+    state: new FormControl(''),
+    zipCode: new FormControl('')
+  });
+
   constructor(private dialogRef: MatDialogRef<PaymentComponent>, private dialog: MatDialog, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.paymentForm = this.formBuilder.group({
-      cardNumber: ['', Validators.required],
-      expirationDate: ['', Validators.required],
-      cvv: ['', Validators.required],
-      nameOnCard: ['', Validators.required],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zipCode: ['', Validators.required]
-    });
+
   }
   cancel(): void {
     this.dialogRef.close();

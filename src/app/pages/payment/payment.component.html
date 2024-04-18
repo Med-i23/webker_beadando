@@ -1,8 +1,10 @@
+
 <mat-card>
   <mat-card-title>Fizetés</mat-card-title>
+  <form [formGroup]="paymentForm">
   <mat-card-content>
     <mat-form-field>
-      <input matInput placeholder="Kártyaszám" >
+      <input matInput placeholder="Kártyaszám" formControlName="cardnumber">
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Lejárati dátum" >
@@ -30,4 +32,6 @@
     <button mat-button (click)="cancel()">Mégse</button>
     <button mat-button color="primary" (click)="pay()">Mehet!</button>
   </mat-card-actions>
+  </form>
 </mat-card>
+

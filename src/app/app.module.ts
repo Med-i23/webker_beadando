@@ -24,6 +24,7 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import {MatFormField} from "@angular/material/form-field";
 import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/material/card";
 import { ThankYouComponent } from './pages/thank-you/thank-you.component';
+import {MatInput} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ThankYouComponent } from './pages/thank-you/thank-you.component';
     MatCardTitle,
     MatCard,
     MatCardContent,
+    MatInput,
     //provideFirebaseApp(() => initializeApp({"projectId":"webker-2024","appId":"1:609794910909:web:6be197f2d62d80f3a265d4","storageBucket":"webker-2024.appspot.com","apiKey":"AIzaSyCj3Gog_2qyXxBSp2eb_lksu3C6uH3LPSI","authDomain":"webker-2024.firebaseapp.com","messagingSenderId":"609794910909","measurementId":"G-FC2QR4C1HT"})),
   ],
   providers: [],

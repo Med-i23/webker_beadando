@@ -23,6 +23,8 @@ export class ConcertComponent implements OnInit {
     { src: this.harminc_y, alt: 'Harminc Y' }
   ];
 
+  cloudImages: Array<any> = [];
+  cloudImagesValue: Array<any> = [];
   concerts$!: Observable<any[]>;
   combinedData$!: Observable<any[]>;
 
@@ -35,18 +37,24 @@ export class ConcertComponent implements OnInit {
         localImages = localImages || [];
         return concerts.map((concert: any, index: number) => ({
           ...concert,
-          image: concert.image || (localImages[index] ? localImages[index].src : ''), // Use local image if concert image is not available
-          alt: concert.alt || (localImages[index] ? localImages[index].alt : '') // Use local alt text if concert alt is not available
+          image: concert.image || (localImages[index] ? localImages[index].src : ''),
+          alt: concert.alt || (localImages[index] ? localImages[index].alt : '')
         }));
       })
     );
+    this.combinedData$.subscribe(value => {
+      this.cloudImagesValue = value;
+      for (let i = 0; i < this.cloudImagesValue.length; i++) {
+        this.concertService.loadImage(value[i].image).subscribe(value => {
+          this.cloudImages.push(value);
+        });
+      }
+    });
   }
-
 
   openPaymentDialog(): void {
     this.paymentService.openPaymentDialog();
   }
-
 
 
 }

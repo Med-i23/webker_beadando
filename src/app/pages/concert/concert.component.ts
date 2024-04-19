@@ -49,6 +49,7 @@ export class ConcertComponent implements OnInit {
           this.cloudImages.push(value);
         });
       }
+
     });
   }
 

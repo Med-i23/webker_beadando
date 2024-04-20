@@ -12,7 +12,7 @@
               <p>Helyszín: {{ item.location }}</p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button (click)="openPaymentDialog()">Jegyvásárlás</button>
+              <button mat-button (click)="openPaymentDialog( item.title )">Jegyvásárlás</button>
             </mat-card-actions>
           </mat-card>
         </div>

@@ -53,8 +53,8 @@ export class ConcertComponent implements OnInit {
     });
   }
 
-  openPaymentDialog(): void {
-    this.paymentService.openPaymentDialog();
+  openPaymentDialog(title: string): void {
+    this.paymentService.openPaymentDialog(title);
   }
 
 

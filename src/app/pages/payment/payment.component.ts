@@ -21,7 +21,7 @@ export class PaymentComponent implements OnInit{
     zipCode: new FormControl('')
   });
 
-  constructor(private dialogRef: MatDialogRef<PaymentComponent>, private dialog: MatDialog, private formBuilder: FormBuilder) {}
+  constructor(private dialogRef: MatDialogRef<PaymentComponent>, private dialog: MatDialog, private formBuilder: FormBuilder, private paymentService: PaymentService) {}
 
   ngOnInit(): void {
 
@@ -31,6 +31,7 @@ export class PaymentComponent implements OnInit{
   }
 
   pay(): void {
+    console.log(this.paymentService.title);
     this.dialogRef.close();
     const dialogRef = this.dialog.open(ThankYouComponent, {
       width: '400px',

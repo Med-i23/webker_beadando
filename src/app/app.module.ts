@@ -25,6 +25,7 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatCard, MatCardActions, MatCardContent, MatCardTitle} from "@angular/material/card";
 import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 import {MatInput} from "@angular/material/input";
+import { TicketsComponent } from './pages/tickets/tickets.component';
 
 @NgModule({
   declarations: [

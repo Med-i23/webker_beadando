@@ -7,6 +7,8 @@ import { Ticket } from "../models/Ticket";
   providedIn: 'root'
 })
 export class TicketService {
+
+  collectionName = "Tickets";
   constructor(private afs: AngularFirestore) { }
 
   getTicketsById(id: string) {
@@ -16,5 +18,11 @@ export class TicketService {
   getTickets(): Observable<any[]> {
     return this.afs.collection('Tickets').valueChanges();
   }
+
+  create(ticket: Ticket) {
+    ticket.id = this.afs.createId();
+    return this.afs.collection<Ticket>(this.collectionName).doc(ticket.id).set(ticket);
+  }
+
 
 }

@@ -42,10 +42,6 @@ export class PaymentComponent implements OnInit{
   }
 
   pay(): void {
-
-  }
-
-  onSubmit() {
     console.log(this.paymentService.title);
     const ticket: Ticket = {
       id: '',
@@ -65,4 +61,8 @@ export class PaymentComponent implements OnInit{
         console.error('Error creating ticket:', error);
       });
   }
+
+  onSubmit(){
+  }
+
 }

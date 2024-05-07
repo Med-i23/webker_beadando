@@ -1,1 +1,12 @@
-<p>tickets works!</p>
+<div class="page-container">
+  <div class="ticket-container">
+    <div class="concert-card" *ngFor="let item of (tickets$ | async) as tickets; let i = index">
+      <mat-card>
+        <mat-card-content>
+          <p><strong>Koncert:</strong> {{ item.concert }}</p>
+          <p><strong>Dátum:</strong> {{ item.date | dateFormat}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

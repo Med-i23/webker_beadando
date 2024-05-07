@@ -18,7 +18,6 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import {AngularFireModule} from "@angular/fire/compat";
-import {DateFormatPipe} from "./shared/pipes/date-format.pipe";
 import { FooterComponent } from './shared/footer/footer.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import {MatFormField} from "@angular/material/form-field";
@@ -28,46 +27,46 @@ import {MatInput} from "@angular/material/input";
 import { TicketsComponent } from './pages/tickets/tickets.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    DateFormatPipe,
-    FooterComponent,
-    PaymentComponent,
-    ThankYouComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    AngularFireModule.initializeApp({
-      "projectId": "webker-2024",
-      "appId": "1:609794910909:web:6be197f2d62d80f3a265d4",
-      "storageBucket": "webker-2024.appspot.com",
-      "apiKey": "AIzaSyCj3Gog_2qyXxBSp2eb_lksu3C6uH3LPSI",
-      "authDomain": "webker-2024.firebaseapp.com",
-      "messagingSenderId": "609794910909",
-      "measurementId": "G-FC2QR4C1HT"
-    }),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    MatFormField,
-    MatCardActions,
-    MatCardTitle,
-    MatCard,
-    MatCardContent,
-    MatInput,
-    //provideFirebaseApp(() => initializeApp({"projectId":"webker-2024","appId":"1:609794910909:web:6be197f2d62d80f3a265d4","storageBucket":"webker-2024.appspot.com","apiKey":"AIzaSyCj3Gog_2qyXxBSp2eb_lksu3C6uH3LPSI","authDomain":"webker-2024.firebaseapp.com","messagingSenderId":"609794910909","measurementId":"G-FC2QR4C1HT"})),
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MenuComponent,
+        FooterComponent,
+        PaymentComponent,
+        ThankYouComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatListModule,
+        AngularFireModule.initializeApp({
+            "projectId": "webker-2024",
+            "appId": "1:609794910909:web:6be197f2d62d80f3a265d4",
+            "storageBucket": "webker-2024.appspot.com",
+            "apiKey": "AIzaSyCj3Gog_2qyXxBSp2eb_lksu3C6uH3LPSI",
+            "authDomain": "webker-2024.firebaseapp.com",
+            "messagingSenderId": "609794910909",
+            "measurementId": "G-FC2QR4C1HT"
+        }),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideStorage(() => getStorage()),
+        MatFormField,
+        MatCardActions,
+        MatCardTitle,
+        MatCard,
+        MatCardContent,
+        MatInput,
+        //provideFirebaseApp(() => initializeApp({"projectId":"webker-2024","appId":"1:609794910909:web:6be197f2d62d80f3a265d4","storageBucket":"webker-2024.appspot.com","apiKey":"AIzaSyCj3Gog_2qyXxBSp2eb_lksu3C6uH3LPSI","authDomain":"webker-2024.firebaseapp.com","messagingSenderId":"609794910909","measurementId":"G-FC2QR4C1HT"})),
+    ],
+    providers: [],
+    exports: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,7 +12,7 @@ export class TicketService {
   constructor(private afs: AngularFirestore) { }
 
   getTicketsById(id: string) {
-    return this.afs.collection<Ticket>('Tickets').doc(id).valueChanges();
+    return this.afs.collection('Tickets', ref => ref.where('buyer', '==', id)).valueChanges();
   }
 
   getTickets(): Observable<any[]> {

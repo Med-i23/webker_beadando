@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ConcertService } from '../../shared/services/concert.service';
 import { Observable, combineLatest, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Image } from '../../shared/models/Image';
 import {PaymentService} from "../../shared/services/payment.service";
 import { NgControl } from '@angular/forms';
 @Component({

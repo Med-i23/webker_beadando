@@ -20,11 +20,7 @@ export class PaymentComponent implements OnInit{
     cardNumber: new FormControl(''),
     expirationDate: new FormControl(''),
     cvv: new FormControl(''),
-    nameOnCard: new FormControl(''),
-    address: new FormControl(''),
-    city: new FormControl(''),
-    state: new FormControl(''),
-    zipCode: new FormControl('')
+    nameOnCard: new FormControl('')
   });
 
   constructor(private dialogRef: MatDialogRef<PaymentComponent>,

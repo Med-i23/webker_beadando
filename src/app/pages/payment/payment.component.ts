@@ -28,8 +28,6 @@ export class PaymentComponent implements OnInit{
               private formBuilder: FormBuilder,
               private paymentService: PaymentService,
               private ticketService: TicketService) {}
-
-
   ngOnInit(): void {
 
   }

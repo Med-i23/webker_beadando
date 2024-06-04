@@ -27,7 +27,21 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  validatePassword(): boolean {
+    const password = this.signUpForm.get('password')?.value;
+    if (password && password.length < 6) {
+      window.alert('Legalább 6 karakter hosszú jelszót adj meg!');
+      return false;
+    }
+    return true;
+  }
+
   onSubmit() {
+    if (!this.validatePassword()) {
+      return;
+    }
+
     console.log(this.signUpForm.value);
     this.authService.signup(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as  string).then(cred => {
       console.log(cred);
@@ -48,6 +62,8 @@ export class SignupComponent implements OnInit {
     }).catch(error => {
       console.error(error);
     });
+
+    this.goBack();
   }
 
   goBack() {
